@@ -211,7 +211,7 @@ include('db.php')
 									$check="SELECT * FROM roombook WHERE email = '$_POST[email]'";
 									$rs = mysqli_query($con,$check);
 									$data = mysqli_fetch_array($rs, MYSQLI_NUM);
-									if($data[0] > 1) {
+									if(!empty($data) and $data[0] > 1) {
 										echo "<script type='text/javascript'> alert('User Already in Exists')</script>";
 										
 									}
